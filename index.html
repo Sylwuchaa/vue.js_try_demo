@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>First step in Vue.js</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.1/spectre.min.css">
+    <style>
+
+    .container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 100px;
+    }
+
+    [v-cloak] {
+        display: none;
+    }
+
+
+    </style>
+    </head>
+<body>
+    <div class="container grid-lg">
+        <div id="app" v-cloak>
+            <h1>{{ heading }}</h1>
+            <p>{{ toUpperCase(text) }}</p>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+<script>
+
+    new Vue({
+
+        el: "#app",
+        data: {
+            heading: "Hello World",
+            text: "Witaj w świecie Vue.js!"
+
+        },
+        methods: {
+            toUpperCase: function(value) {
+                return value.toUpperCase();
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
