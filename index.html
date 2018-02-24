@@ -24,6 +24,10 @@
         <div id="app" v-cloak>
             <h1>{{ heading }}</h1>
             <p>{{ toUpperCase(text) }}</p>
+            <p>Imię: {{ name() }}</p>
+            <p>Nazwisko: {{lastName}}</p>
+            <p>Wiek: {{age}}</p>
+            <p>Imię i nazwisko: {{fullName}}</p>
         </div>
     </div>
 
@@ -35,15 +39,38 @@
         el: "#app",
         data: {
             heading: "Hello World",
-            text: "Witaj w świecie Vue.js!"
+            text: "Witaj w świecie Vue.js!",
+            name: "Sylwester",
+            lastName: "Srokosz",
+            age: 32
 
         },
         methods: {
             toUpperCase: function(value) {
                 return value.toUpperCase();
+            },
+            getName: function(value) {
+                this.name = prompt("Podaj swoje imię");
 
+            },
+            getLastName: function(value) {
+                this.lastName = prompt("Podaj nazwisko");
+
+            },
+            getAge: function() {
+                this.age = prompt("Ilę masz lat?");
             }
+        },
+        computed: {
+            fullName: function() {
+                return this.name + " " + this.lastName + " " + this.age;
+            }
+
+
         }
+
+
+
     });
 
 </script>
